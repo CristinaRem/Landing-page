@@ -1,0 +1,32 @@
+.subscribe {
+  background-color: $lightan;
+}
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  &__email {
+    padding: 15px 20px;
+    border: none;
+    width: 40%;
+    @include media-breakpoint-down(md){
+      width:100%;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &__btn {
+    color: $gray;
+    background-color: $lightan;
+    border: none;
+    padding: 15px 30px;
+    color: $gray;
+    &:hover {
+      background-color: $tan;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

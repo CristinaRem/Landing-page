@@ -1,0 +1,77 @@
+.header {
+  position: relative;
+  background-color: $whitesmoke;
+  z-index: 1;
+  color: $gray;
+  &__wrapper {
+    padding-top: 0;
+  }
+  &__overlay-img {
+    background: url("./assets/images/chair6.jpg") no-repeat bottom;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    width: 40%;
+    height: 100%;
+  }
+  &__overlay-item {
+    position: absolute;
+    background-color: $lightgray;
+    width: 40%;
+    z-index: -1;
+    height: 200px;
+    bottom: 5%;
+    &::after {
+      content: "";
+      width: 3px;
+      height: 210px;
+      background-color: $gainsboro;
+      position: absolute;
+      right: 15%;
+      bottom: -45%;
+    }
+  }
+  &__title {
+    text-align: center;
+    padding-bottom: 100px;
+    max-width: 70%;
+    font-size: 45px;
+    margin: 0 auto;
+    padding-right: 120px;
+    @include media-breakpoint-down(xl) {
+      padding-right: 0;
+    }
+    @include media-breakpoint-down(lg) {
+      max-width: 100%;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 30px;
+    }
+  }
+}
+.logo {
+  padding: 25px 0 20px;
+  &__img {
+    width: 150px;
+  }
+}
+.navbar {
+  padding-bottom: 60px;
+  &__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__item {
+    padding: 3px 0;
+  }
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $gray;
+    &:hover {
+      text-shadow:  0 0 1px $black;
+    }
+  }
+}

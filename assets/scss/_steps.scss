@@ -1,0 +1,84 @@
+.steps {
+  background-color: #f0f0f0;
+  padding: 20px 0 150px;
+}
+.steps-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  @include media-breakpoint-down(sm){
+    justify-content: space-around;
+  }
+}
+.step {
+  margin: 0 20px;
+  cursor: pointer;
+  border: 1px solid $gray;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  &:focus,
+  &:hover,
+  &:active {
+    border-color: $gainsboro;
+    box-shadow: 0 0 2px $gray;
+    .step__icon {
+      color: $tan;
+    }
+  }
+  @include media-breakpoint-down(sm){
+    margin:0;
+  }
+  &__icon {
+    margin: 0;
+    font-size: 30px;
+    color: $gray;
+  }
+  &__content {
+    position: absolute;
+    color: $gray;
+    border-top: 2px solid transparent;
+    border-image: linear-gradient(to right, #f0f0f0, $lightan, #f0f0f0);
+    border-image-slice: 1;
+    cursor: context-menu;
+    text-align: center;
+    top: 80px;
+    left: 50%;
+    opacity: 0;
+    display: none;
+    padding: 10px;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    width: 60%;
+    transition: 0.3s;
+    @include media-breakpoint-down(md){
+      width:80%;
+    }
+    @include media-breakpoint-down(sm){
+      width: 100%;
+    }
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+.show.step {
+  box-shadow: 0 0 2px $gray;
+  border-color: $gainsboro;
+}
+.show {
+  .step {
+    &__content {
+      opacity: 1;
+      display: block;
+    }
+    &__icon {
+      color: $tan;
+    }
+  }
+}
